@@ -1,3 +1,7 @@
 HTTPFREEDOM KEYWORD1
 
-escreveStatusNaEEPROM KEYWORD2
+handleRoot KEYWORD2
+handleRoot2 KEYWORD2
+handleNotFound KEYWORD2
+defaultSetting KEYWORD2
+handleClient KEYWORD2

@@ -1,23 +1,26 @@
-#ifndef HTTPFREEDOM_h
-#define HTTPFREEDOM_h
+#ifndef HTTPFREEDOM_H
+#define HTTPFREEDOM_H
 
-#include <Arduino.h> 
+#include "Arduino.h"
+#include <ESP8266WebServer.h>
 
-#include "ESP8266WiFi.h"
-#include "WiFiClient.h"
-#include "ESP8266WebServer.h"
+extern "C" {
+  #include "user_interface.h"
+}
 
-
-class HTTPFREEDOM{
+class HTTPFREEDOM
+{
     public:
-        void handleRoot(int endereco, int valor);
-
-    private: 
-    	std::unique_ptr<ESP8266WebServer> server;    
-
+        void handleRoot();
+        void handleRoot2();        
+        void handleNotFound();
+        void getData();
+        String setValue();
+        void defaultSetting(String json, String html);
+        void handleClient();      
+        std::unique_ptr<ESP8266WebServer> server;
+        String htmlText;
+        String responseJson;
 };
-
-  
-
 
 #endif
